@@ -4,12 +4,11 @@ Dashboard de análise de cancelamento (churn) de clientes de telecomunicações,
 
 **Resultado principal:** de 7.032 clientes, 1.869 cancelaram, uma taxa de churn de **26,6%**.
 
-> Painel online: _cole aqui o link do GitHub Pages_
+> Painel online: https://lucaborgeslima.github.io/Projeto-Churn-/
 
 ## Fonte dos dados
 
-- Dataset público do **Kaggle**: _nome do dataset e link_
-- Licença: _confira e informe a licença do dataset_
+- Dataset público do **Kaggle**
 
 ## Tratamento e modelagem
 
@@ -45,8 +44,6 @@ Os valores em dólar (US$) são as mensalidades dos clientes que cancelaram. O p
 3. **Suporte técnico na fibra:** 49,4% de churn sem suporte, 22,6% com suporte. Custo: US$ 94.901 por mês.
 4. **Pagamento automático:** no contrato mensal, 53,7% de churn com cheque eletrônico, 33,5% com pagamento automático. Custo: US$ 77.316 por mês.
 
-São associações observadas nos dados, não prova de que a mudança vá reduzir o churn. O ideal é validar com um teste (por exemplo, oferta para um grupo e comparação com outro).
-
 ## Painel web
 
 Versão interativa que roda direto no navegador, sem servidor.
@@ -58,23 +55,6 @@ Versão interativa que roda direto no navegador, sem servidor.
 - Grupos com menos de 30 clientes aparecem com `*`.
 - O botão **Pausar pulso** liga e desliga o brilho animado da coluna mais alta.
 
-### Estrutura
-
-```
-painel-churn/
-├── index.html      estrutura da página
-├── css/style.css   estilo (tema escuro)
-└── js/
-    ├── data.js     dados agregados do modelo (811 combinações)
-    └── app.js      filtros, gráficos 3D, KPIs e tooltip
-```
-
-Para abrir localmente, dê dois cliques no `index.html`.
-
-### Atualizar os dados
-
-O painel web usa um retrato dos dados de 12/11/2026. Para atualizar, gere uma nova consulta no modelo do Power BI com as mesmas colunas e substitua o conteúdo de `js/data.js`.
-
 ## Tecnologias
 
-Power BI · Power Query · DAX · HTML · CSS · JavaScript (SVG)
+Power BI · Power Query · DAX · HTML · CSS · JavaScript · Claude Code
