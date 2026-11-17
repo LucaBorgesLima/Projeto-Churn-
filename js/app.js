@@ -9,10 +9,10 @@
   var ROWS = DATA.split(';').map(function (r) {
     var a = r.split(','), o = [], i;
     for (i = 0; i < 8; i++) o.push(+a[0].charAt(i));
-    o.push(+a[1], +a[2], +a[3], +a[4]);
+    o.push(+a[1], +a[2], +a[3], +a[4], +a[5], +a[6]);
     return o;
   });
-  var IN = 8, IC = 9, IST = 10, ISC = 11;
+  var IN = 8, IC = 9, IST = 10, ISC = 11, IMT = 12, IMC = 13; // IMT/IMC: mensalidades em centavos (todos / cancelados)
 
   // pos = posição do código na linha; order = ordem de exibição dos códigos
   var DIMS = [
@@ -66,10 +66,10 @@
   }
   // Totais com todos os filtros
   function totals() {
-    var t = { n: 0, c: 0, st: 0, sc: 0 };
+    var t = { n: 0, c: 0, st: 0, sc: 0, mt: 0, mc: 0 };
     ROWS.forEach(function (r) {
       if (!pass(r, null)) return;
-      t.n += r[IN]; t.c += r[IC]; t.st += r[IST]; t.sc += r[ISC];
+      t.n += r[IN]; t.c += r[IC]; t.st += r[IST]; t.sc += r[ISC]; t.mt += r[IMT]; t.mc += r[IMC];
     });
     return t;
   }
@@ -221,6 +221,9 @@
     document.getElementById('kCancSub').textContent = pct(t.c, t.n) + ' da seleção';
     document.getElementById('kRate').textContent = t.n ? p(t.c / t.n) : '–';
     document.getElementById('kRateSub').textContent = n(t.c) + ' de ' + n(t.n) + ' clientes';
+    var rev = t.mc / 100;
+    document.getElementById('kRev').innerHTML = t.n ? 'US$ ' + rev.toLocaleString(BR, { maximumFractionDigits: 0 }) : '–';
+    document.getElementById('kRevSub').textContent = t.mt ? p(t.mc / t.mt) + ' da receita mensal da seleção' : '';
     document.getElementById('kTA').innerHTML = ativos ? m1((t.st - t.sc) / ativos) + '<small>meses</small>' : '–';
     document.getElementById('kTC').innerHTML = t.c ? m1(t.sc / t.c) + '<small>meses</small>' : '–';
   }
