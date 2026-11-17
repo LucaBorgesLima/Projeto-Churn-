@@ -65,7 +65,7 @@ main.gutter { padding-block: 8px 80px; display: flex; flex-direction: column; ga
 .seg button[aria-pressed="true"] { background: var(--s2); color: var(--ink); }
 
 /* KPIs */
-.kpis { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+.kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .kpi { background: var(--s1); border-radius: 20px; padding: 22px 22px 20px; min-width: 0; display: flex; flex-direction: column; }
 .kpi.main { background: linear-gradient(135deg, var(--violet) 0%, var(--magenta) 100%); }
 .kpi-label { margin: 0; font-size: 14px; color: var(--ink2); font-weight: 500; }
@@ -136,13 +136,13 @@ td { color: var(--ink); }
 }
 
 @media (max-width: 1100px) {
-  .kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .span6 { grid-column: span 12; }
   .span4 { grid-column: span 6; }
 }
 @media (max-width: 720px) {
   .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .kpi-val { font-size: 36px; }
+  .kpi-val { font-size: clamp(26px, 7.2vw, 36px); }
+  .kpi { padding: 18px 16px 16px; }
   .reading { grid-template-columns: minmax(0, 1fr); }
   .reading > div + div { border-left: 0; border-top: 1px solid var(--hair); }
   .band .gutter { padding-top: 32px; }
@@ -150,3 +150,17 @@ td { color: var(--ink); }
 @media (max-width: 560px) {
   .span4 { grid-column: span 12; }
 }
+
+/* Recomendações */
+.recs { display: flex; flex-direction: column; gap: 16px; margin-top: 12px; }
+.recs-head h2 { font-family: var(--display); font-size: clamp(28px, 4.4vw, 40px); line-height: 1.05; font-weight: 500; letter-spacing: -0.05em; margin: 0; }
+.recs-head p { margin: 10px 0 0; color: var(--ink2); max-width: 70ch; }
+.recs-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.rec { background: var(--s1); border-radius: 20px; padding: 24px 22px; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.rec b { font-family: var(--display); font-size: 44px; line-height: 1; font-weight: 500; letter-spacing: -0.05em; color: var(--orange); }
+.rec h3 { margin: 8px 0 0; font-family: var(--display); font-size: 20px; line-height: 1.15; font-weight: 500; letter-spacing: -0.03em; }
+.rec p { margin: 0; color: var(--ink2); font-size: 14px; }
+.rec .cost { color: var(--ink); font-weight: 500; }
+.rec .act { margin-top: auto; padding-top: 12px; color: var(--ink); border-top: 1px solid var(--hair); }
+@media (max-width: 1100px) { .recs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .recs-grid { grid-template-columns: minmax(0, 1fr); } }

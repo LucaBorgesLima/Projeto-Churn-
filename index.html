@@ -14,7 +14,7 @@
     <div class="gutter">
       <div>
         <h1>Análise de Churn de Clientes</h1>
-        <p>7.032 clientes</p>
+        <p> 7.032 clientes</p>
       </div>
       <button class="btn" id="pauseBtn" type="button" aria-pressed="false">Pausar pulso</button>
     </div>
@@ -33,16 +33,53 @@
     <section class="kpis" aria-label="Indicadores">
       <div class="kpi" style="--accent: var(--teal)"><p class="kpi-label">Clientes ativos</p><p class="kpi-val" id="kAtivos"></p><p class="kpi-sub" id="kAtivosSub"></p></div>
       <div class="kpi" style="--accent: var(--purple)"><p class="kpi-label">Clientes cancelados</p><p class="kpi-val" id="kCanc"></p><p class="kpi-sub" id="kCancSub"></p></div>
-      <div class="kpi" style="--accent: var(--green)"><p class="kpi-label">Tempo médio dos ativos</p><p class="kpi-val" id="kTA"></p><p class="kpi-sub">de casa, em média</p></div>
       <div class="kpi main"><p class="kpi-label">Taxa de churn</p><p class="kpi-val" id="kRate"></p><p class="kpi-sub" id="kRateSub"></p></div>
+      <div class="kpi"><p class="kpi-label">Receita mensal perdida</p><p class="kpi-val" id="kRev"></p><p class="kpi-sub" id="kRevSub"></p></div>
+      <div class="kpi" style="--accent: var(--green)"><p class="kpi-label">Tempo médio dos ativos</p><p class="kpi-val" id="kTA"></p><p class="kpi-sub">de casa, em média</p></div>
       <div class="kpi" style="--accent: var(--orange)"><p class="kpi-label">Tempo médio dos cancelados</p><p class="kpi-val" id="kTC"></p><p class="kpi-sub">de casa, em média</p></div>
     </section>
 
     <section class="reading" id="reading" aria-label="Leitura rápida"></section>
 
+    <section class="recs" aria-label="Recomendações">
+      <div class="recs-head">
+        <h2>Onde agir primeiro</h2>
+      </div>
+      <div class="recs-grid">
+        <article class="rec">
+          <b>71,1%</b>
+          <h3>Perfil de maior risco</h3>
+          <p>Contrato mensal, fibra óptica, sem suporte técnico e até 12 meses de casa: 592 de 833 clientes cancelaram.</p>
+          <p class="cost">US$ 48.490 por mês em mensalidades perdidas.</p>
+          <p class="act">Ação: contato proativo e oferta de retenção para quem entra nesse perfil.</p>
+        </article>
+        <article class="rec">
+          <b>51,4%</b>
+          <h3>Contrato anual desde cedo</h3>
+          <p>Clientes novos (até 12 meses) em contrato mensal cancelam 51,4%. Nos contratos anuais ou de 2 anos, 7,2% (amostra de 181 clientes).</p>
+          <p class="cost">US$ 68.301 por mês perdidos nos contratos mensais de clientes novos.</p>
+          <p class="act">Ação: oferecer desconto para migrar para contrato anual nos primeiros meses.</p>
+        </article>
+        <article class="rec">
+          <b>49,4%</b>
+          <h3>Suporte técnico na fibra</h3>
+          <p>Na fibra óptica, quem não tem suporte técnico cancela 49,4% (1.101 de 2.230). Com suporte, 22,6% (196 de 866).</p>
+          <p class="cost">US$ 94.901 por mês perdidos na fibra sem suporte.</p>
+          <p class="act">Ação: incluir suporte técnico gratuito por alguns meses para novos clientes de fibra.</p>
+        </article>
+        <article class="rec">
+          <b>53,7%</b>
+          <h3>Cheque eletrônico no mensal</h3>
+          <p>Entre clientes de contrato mensal, quem paga com cheque eletrônico cancela 53,7%. Com pagamento automático, 33,5%.</p>
+          <p class="cost">US$ 77.316 por mês perdidos com cheque eletrônico no mensal.</p>
+          <p class="act">Ação: incentivar a troca para débito ou cartão automático.</p>
+        </article>
+      </div>
+    </section>
+
     <section class="grid" id="grid" aria-label="Taxa de churn por grupo"></section>
 
-   
+    
   </main>
 </div>
 <div id="tip" hidden></div>
