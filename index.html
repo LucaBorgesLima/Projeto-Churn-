@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel de Churn 3D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@500&family=Inter:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="root">
+  <header class="band">
+    <div class="gutter">
+      <div>
+        <h1>Análise de Churn de Clientes</h1>
+        <p>7.032 clientes</p>
+      </div>
+      <button class="btn" id="pauseBtn" type="button" aria-pressed="false">Pausar pulso</button>
+    </div>
+  </header>
+
+  <main class="gutter">
+    <div class="toolbar" id="toolbar">
+      <div class="filters" id="filters" aria-label="Filtros ativos"></div>
+      <div class="seg" role="group" aria-label="Métrica das colunas">
+        <button type="button" id="mRate" aria-pressed="true">Taxa de churn</button>
+        <button type="button" id="mCount" aria-pressed="false">Nº de cancelados</button>
+      </div>
+    </div>
+    <div class="sr" id="live" aria-live="polite"></div>
+
+    <section class="kpis" aria-label="Indicadores">
+      <div class="kpi" style="--accent: var(--teal)"><p class="kpi-label">Clientes ativos</p><p class="kpi-val" id="kAtivos"></p><p class="kpi-sub" id="kAtivosSub"></p></div>
+      <div class="kpi" style="--accent: var(--purple)"><p class="kpi-label">Clientes cancelados</p><p class="kpi-val" id="kCanc"></p><p class="kpi-sub" id="kCancSub"></p></div>
+      <div class="kpi" style="--accent: var(--green)"><p class="kpi-label">Tempo médio dos ativos</p><p class="kpi-val" id="kTA"></p><p class="kpi-sub">de casa, em média</p></div>
+      <div class="kpi main"><p class="kpi-label">Taxa de churn</p><p class="kpi-val" id="kRate"></p><p class="kpi-sub" id="kRateSub"></p></div>
+      <div class="kpi" style="--accent: var(--orange)"><p class="kpi-label">Tempo médio dos cancelados</p><p class="kpi-val" id="kTC"></p><p class="kpi-sub">de casa, em média</p></div>
+    </section>
+
+    <section class="reading" id="reading" aria-label="Leitura rápida"></section>
+
+    <section class="grid" id="grid" aria-label="Taxa de churn por grupo"></section>
+
+   
+  </main>
+</div>
+<div id="tip" hidden></div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
